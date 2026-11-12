@@ -1,0 +1,381 @@
+/* Estilos globales y variables de color del tema. */
+:root {
+  --bg: #0b1020;
+  --bg-soft: #111830;
+  --panel: rgba(20, 28, 50, 0.9);
+  --border: #263252;
+  --text: #e8edf7;
+  --muted: #93a0bd;
+  --accent: #5b8cff;
+  --accent-2: #22d3ee;
+  --ok: #34d399;
+  --error: #fb7185;
+  --shadow: 0 20px 45px rgba(3, 8, 25, 0.55);
+  font: 16px/1.55 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Incluye padding y bordes dentro del ancho de cada elemento. */
+* {
+  box-sizing: border-box;
+}
+
+/* Fondo con degradados suaves. */
+body {
+  margin: 0;
+  min-height: 100svh;
+  background:
+    radial-gradient(
+      900px 500px at 15% -10%,
+      rgba(91, 140, 255, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 400px at 110% 10%,
+      rgba(34, 211, 238, 0.16),
+      transparent 55%
+    ),
+    var(--bg);
+}
+
+/* Contenedor principal de la aplicación. */
+.app {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Encabezado. */
+.hero {
+  text-align: center;
+  padding: 12px 0 4px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Tarjetas de sección. */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.card h2 {
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Fila de configuración de la cantidad. */
+.config-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.config-row .field {
+  flex: 1 1 220px;
+}
+
+/* Campos de formulario. */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.field input {
+  width: 100%;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91, 140, 255, 0.25);
+}
+
+/* Mensajes de error junto al campo. */
+.error {
+  color: var(--error);
+  font-size: 0.8rem;
+}
+
+/* Botones. */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #06122b;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Filas de entrada de cada vector. */
+.vectores {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vector-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(10, 16, 32, 0.5);
+}
+
+.vector-num {
+  font-weight: 600;
+  color: var(--accent-2);
+  padding-top: 24px;
+}
+
+/* Botones de acción del formulario. */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Tabla de componentes. */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Gráfico SVG de vectores. */
+.grafico-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.grafico {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  background: rgba(8, 14, 30, 0.45);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+/* Ejes y etiquetas del gráfico. */
+.eje {
+  stroke: #3a4766;
+  stroke-width: 1.5;
+}
+
+.eje-label {
+  fill: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.origen {
+  fill: var(--text);
+}
+
+/* Leyenda de colores. */
+.leyenda {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.leyenda li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex: none;
+}
+
+/* Bloque de resultado destacado. */
+.resultado {
+  border-color: rgba(91, 140, 255, 0.55);
+  background: linear-gradient(
+    160deg,
+    rgba(91, 140, 255, 0.16),
+    rgba(34, 211, 238, 0.08)
+  );
+}
+
+.resultado-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.resultado-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(8, 14, 30, 0.55);
+  border: 1px solid var(--border);
+}
+
+.resultado-grid span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.resultado-grid strong {
+  font-size: 1.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Aviso de vector nulo. */
+.nulo {
+  margin: 16px 0 0;
+  color: var(--error);
+}
+
+/* Enlace a las pruebas. */
+.pie {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.pie a {
+  color: var(--accent-2);
+}
+
+/* Lista de resultados de las pruebas. */
+.pruebas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.pruebas li.ok {
+  color: var(--ok);
+}
+
+.pruebas li.error {
+  color: var(--error);
+}
+
+/* Ajustes para pantallas pequeñas. */
+@media (max-width: 640px) {
+  .card {
+    padding: 18px;
+  }
+
+  .vector-row {
+    grid-template-columns: 1fr;
+  }
+
+  .vector-num {
+    padding-top: 0;
+  }
+
+  .resultado-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions .btn {
+    flex: 1 1 100%;
+  }
+}
