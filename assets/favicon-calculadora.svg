@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Calculadora">
+  <!-- Icono genérico de calculadora -->
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b8cff" />
+      <stop offset="1" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cuerpo de la calculadora -->
+  <rect x="7" y="3" width="50" height="58" rx="10" fill="#0b1020" />
+  <rect x="10" y="6" width="44" height="52" rx="8" fill="url(#fondo)" />
+
+  <!-- Pantalla -->
+  <rect x="15" y="12" width="34" height="12" rx="3" fill="#0b1020" />
+  <rect x="18" y="15" width="20" height="2" rx="1" fill="#22d3ee" opacity="0.9" />
+  <rect x="18" y="19" width="12" height="2" rx="1" fill="#93a0bd" opacity="0.7" />
+
+  <!-- Botones -->
+  <g fill="#e8edf7">
+    <rect x="15" y="29" width="9" height="8" rx="2" />
+    <rect x="27.5" y="29" width="9" height="8" rx="2" />
+    <rect x="40" y="29" width="9" height="8" rx="2" />
+    <rect x="15" y="40" width="9" height="8" rx="2" />
+    <rect x="27.5" y="40" width="9" height="8" rx="2" />
+    <rect x="40" y="40" width="9" height="8" rx="2" />
+    <rect x="15" y="51" width="21.5" height="8" rx="2" />
+  </g>
+  <rect x="40" y="51" width="9" height="8" rx="2" fill="#0b1020" />
+</svg>

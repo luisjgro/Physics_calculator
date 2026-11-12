@@ -1,0 +1,24 @@
+{
+  "name": "Calc Física · Suma de vectores 2D",
+  "short_name": "Calc Física",
+  "description": "Calculadora de suma de vectores 2D con componentes, resultante y gráfico.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [
+    {
+      "src": "assets/favicon-calculadora.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
