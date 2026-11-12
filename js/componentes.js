@@ -33,12 +33,12 @@ function renderFormulario(vectores) {
         '<span class="vector-num">Vector ' + (i + 1) + '</span>' +
         '<div class="field">' +
         '<label for="magnitud-' + i + '">Magnitud</label>' +
-        '<input id="magnitud-' + i + '" data-indice="' + i + '" data-campo="magnitud" type="number" step="any" placeholder="Ej. 10" />' +
+        '<input id="magnitud-' + i + '" data-indice="' + i + '" data-campo="magnitud" type="text" inputmode="text" autocomplete="off" placeholder="Ej. 10" />' +
         '<span class="error" id="error-magnitud-' + i + '"></span>' +
         '</div>' +
         '<div class="field">' +
         '<label for="direccion-' + i + '">Dirección (°)</label>' +
-        '<input id="direccion-' + i + '" data-indice="' + i + '" data-campo="direccion" type="number" step="any" placeholder="Ej. 30" />' +
+        '<input id="direccion-' + i + '" data-indice="' + i + '" data-campo="direccion" type="text" inputmode="text" autocomplete="off" placeholder="Ej. 30" />' +
         '<span class="error" id="error-direccion-' + i + '"></span>' +
         '</div>' +
         '</div>'
@@ -166,7 +166,7 @@ function renderGrafico(filas, resultado) {
       return (
         '<li>' +
         '<span class="swatch" style="background:' + PALETA[i % PALETA.length] + '"></span>' +
-        'Vector ' + (i + 1) + ' (' + formatear(fila.magnitud) + ' @ ' + formatear(fila.angulo) + '°)' +
+        'Vector ' + (i + 1) + ': magnitud ' + formatear(fila.magnitud, 2) + ', ángulo ' + formatear(fila.angulo, 2) + '°' +
         '</li>'
       );
     })
@@ -174,12 +174,12 @@ function renderGrafico(filas, resultado) {
 
   var direccionResultado = resultado.esNulo
     ? '—'
-    : formatear(resultado.direccion) + '°';
+    : formatear(resultado.direccion, 2) + '°';
 
   document.getElementById('leyenda').innerHTML =
     itemsVectores +
     '<li>' +
     '<span class="swatch" style="background:' + COLOR_RESULTANTE + '"></span>' +
-    'Resultante (' + formatear(resultado.magnitud) + ' @ ' + direccionResultado + ')' +
+    'Resultante: magnitud ' + formatear(resultado.magnitud, 2) + ', ángulo ' + direccionResultado +
     '</li>';
 }
