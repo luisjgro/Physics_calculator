@@ -51,6 +51,24 @@ body {
   gap: 20px;
 }
 
+/* Logo institucional arriba a la izquierda. */
+.logo-barra {
+  width: 100%;
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo {
+  display: block;
+  width: 180px;
+  height: auto;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
 /* Encabezado. */
 .hero {
   text-align: center;
@@ -359,6 +377,10 @@ tbody tr:last-child td {
 
 /* Ajustes para pantallas pequeñas. */
 @media (max-width: 640px) {
+  .logo {
+    width: 130px;
+  }
+
   .card {
     padding: 18px;
   }
