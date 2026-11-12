@@ -61,12 +61,9 @@ body {
 
 .logo {
   display: block;
-  width: 180px;
+  width: 280px;
   height: auto;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: var(--shadow);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
 }
 
 /* Encabezado. */
@@ -378,7 +375,7 @@ tbody tr:last-child td {
 /* Ajustes para pantallas pequeñas. */
 @media (max-width: 640px) {
   .logo {
-    width: 130px;
+    width: 200px;
   }
 
   .card {
